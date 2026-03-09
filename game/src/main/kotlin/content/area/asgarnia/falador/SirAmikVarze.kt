@@ -30,13 +30,22 @@ class SirAmikVarze : Script {
                         }
                     }
                 }
+                "started" -> {
+                    npc<Neutral>("How's the mission going?")
+                    player<No>("I haven't managed to find what the secret weapon is yet...")
+                    npc<Condescending>("Well, keep at it! Falador's future is at stake!") // TODO: is this the right expression?
+
+                    // TODO: check if player lost dossier
+                }
                 // TODO: mid quest dialogue
+                // TODO: post quest dialogue
             }
         }
     }
 
     suspend fun Player.blackKnightsFortressSeekingAQuest() {
         // TODO: How should it be handled if the player doesn't have the requirements?
+        // Sorry, I'm looking for someone a bit more experienced.
 
         player<Happy>("I seek a quest!")
         npc<Neutral>(
